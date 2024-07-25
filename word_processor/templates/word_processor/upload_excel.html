@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Excel</title>
+    <style>
+        /* Style the form container */
+        .form-container {
+            width: 35%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style form headings */
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* Style form labels */
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        /* Style form input fields */
+        .form-container input[type="text"],
+        .form-container input[type="file"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style the submit button */
+        .form-container button[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style the submit button on hover */
+        .form-container button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+  
+
+    <form method="post" enctype="multipart/form-data" class="form-container">
+        <h1>Excel to word</h1>
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <label for="document_name">Document Name:</label>
+        <input type="text" id="document_name" name="document_name">
+    
+        <button type="submit">Upload</button>
+        
+    </form>
+    
+</body>
+</html>
